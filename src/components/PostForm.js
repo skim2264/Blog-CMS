@@ -40,11 +40,11 @@ const PostForm = () => {
 
   return (
     <form className="post-form" onSubmit={submitForm}>
-      <label htmlFor="title"></label>
-      <input name="title" id="post-title" placeholder="New post" onChange={handleChange}></input>
-      <label htmlFor="text"></label>
+      <label htmlFor="title">Post Title:</label>
+      <input name="title" id="post-title" placeholder="Title" onChange={handleChange}></input>
+      <label htmlFor="text">Post:</label>
       <input name="text" id="post-text" placeholder="New post" onChange={handleChange}></input>
-      <label htmlFor="isPrivate"></label>
+      <label htmlFor="isPrivate">Keep Post Private</label>
       <input type="checkbox" name="isPrivate" id="post-private" placeholder="New post" onChange={handleChange}></input>
       <button type="submit">Add post</button>
 

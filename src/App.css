@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family:"Verdana, Geneva, Tahoma, sans-serif";
+}
+
+html, body, #root, .app-div {
+  height: 100%; 
+}
+
+/* Login forms and divs*/
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.login-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:bisque;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 20px;
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 10px 10px #d5eeff;
+}
+
+.login-form>input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.submit-button {
+  border: 0;
+  background-color: white;
+  font-size: 15px;
+  border: 1px solid #005689;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.submit-button:hover {
+  cursor: grab;
+  color:#005689
+}
+
+/* Navbar */
+.navbar-div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #005689;
+  padding: 30px;
+  align-items: center;
+  max-height: 40px;
+}
+
+.nav-link {
+  text-decoration: none;
+  border: 1px solid transparent;
+  color:#d5eeff;
+  background-color: transparent;
+  font-family:"Verdana, Geneva, Tahoma, sans-serif";
+  font-size: 15px;
+  padding: 5px;
+}
+
+.nav-link:hover {
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: grab;
+}
+
+/* Posts */
+.posts-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  background-color: #d5eeff;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* Post */
+.post-div {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ff895d;
+  box-shadow: 5px 5px 5px rgb(202, 204, 209);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.post-image-text {
+  flex-wrap: wrap;
+}
+
+.post-image {
+  max-height: 200px;
+  object-fit: contain;
+  float: left;
+  margin: 10px;
+}
+
+.post-title, .post-link {
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.post-link:hover {
+  color: #005689;
+  cursor:grab;
+}
+
+.post-text {
+  margin-left: 20px;
+  padding-bottom: 20px;
+}
+
+.post-author {
+  align-self:flex-end;
+  margin-right: 20px;
+  padding-bottom: 20px;
+}

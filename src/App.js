@@ -9,7 +9,7 @@ import Navbar from './components/Navbar';
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   return (
-    <div className="App">
+    <div className="app-div">
       <BrowserRouter>
         <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn}></Navbar>
         <Routes>
