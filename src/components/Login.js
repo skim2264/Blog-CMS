@@ -38,8 +38,8 @@ const Login = (props) => {
 
     if ('token' in response && response.user.username==="admin123") {
       //alert successful and redirect 
-      localStorage.setItem('accessToken', response.token);
-      localStorage.setItem('user', JSON.stringify(response.user));
+      sessionStorage.setItem('accessToken', response.token);
+      sessionStorage.setItem('user', JSON.stringify(response.user));
       alert("Logged in successfully!");
       setLoggedIn(true);
       navigate('/posts');
@@ -55,9 +55,9 @@ const Login = (props) => {
       <h1>Login</h1>
       <form className="login-form" onSubmit={loginSubmit}>
         <label htmlFor="username"></label>
-        <input name="username" placeholder="Username" onChange={handleUsernameChange} value={username}></input>
+        <input name="username" placeholder="Username" autoComplete="username" onChange={handleUsernameChange} value={username}></input>
         <label htmlFor="password"></label>
-        <input name="password" type="password" placeholder="Password" onChange={handlePasswordChange} value={password}></input>
+        <input name="password" type="password" autoComplete="current-password" placeholder="Password" onChange={handlePasswordChange} value={password}></input>
         <button type="submit" className="submit-button">Login</button>
       </form>
       {error ? <p>{error}</p>: null}

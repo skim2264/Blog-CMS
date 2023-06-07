@@ -1,12 +1,17 @@
 import React, {useState, useEffect} from "react";
 import Post from "./Post";
+import { NavLink } from "react-router-dom";
 
-const Posts = () => {
+const Posts = (props) => {
+  const loggedIn = props;
   const [posts, setPosts] = useState([]);
 
   //fetch all products from API on mount
   useEffect(() => {
-    getAllPosts();
+    if (loggedIn) {
+      getAllPosts();
+    }
+    
   },[]);
 
   const getAllPosts = async() => {
@@ -15,7 +20,7 @@ const Posts = () => {
       headers: { 
         Accept: "application/json",
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('accessToken')}`}
+        Authorization: `Bearer ${sessionStorage.getItem('accessToken')}`}
     }
     const response = await fetch("https://blog-api-production-9c1d.up.railway.app/api/posts", requestOptions)
       .then(data => data.json())
@@ -32,7 +37,7 @@ const Posts = () => {
         ? posts.map(post => {
           return <Post post={post} key={post._id}></Post>
         })
-        : <p>Please login to view posts</p>
+        : <p>Please <NavLink to="/">login</NavLink> to view posts</p>
       }
     </div>
   )
