@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Posts from './components/Posts';
 import Login from './components/Login';
 import PostForm from './components/PostForm';
@@ -12,7 +12,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState('accessToken' in sessionStorage);
   return (
     <div className="app-div">
-      <BrowserRouter>
+      <HashRouter>
         <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn}></Navbar>
         <Routes>
           <Route path='/' element={<Login setLoggedIn={setLoggedIn}/>}/>
@@ -21,7 +21,7 @@ function App() {
           <Route path='/:postId' element={<Post/>}/>
           <Route path='/updatePost' element={<UpdatePostForm/>}/>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
